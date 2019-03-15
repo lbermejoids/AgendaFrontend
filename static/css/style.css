@@ -1,0 +1,152 @@
+/* Customize container */
+      @media (min-width: 768px) {
+        .container {
+          width: 100%;
+          height: 80%; 
+          /*background-color: red;
+          margin-top: 30px;
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          text-align: center;
+          color: white;
+          font-size: 1em;
+          */
+
+        }
+      }
+
+     /* Elementos principales de la página */
+
+      body
+      {
+          /*background: url('images/yellow_background.png');
+          color: blue;
+          #e8e4bef2
+          */
+
+      }
+
+      #container
+      {
+          /**/
+          background-color: #e8e4bef2;
+          width: auto;
+          height: auto;
+          margin: auto;
+      }
+
+      #main_seccion
+      {
+          display: inline-block;
+      }
+
+      /* Navegación */
+
+      nav
+      {
+          /*  display: inline-block;
+          text-align: right;
+          width: 740px;
+          */
+          
+          
+      }
+
+      /*
+            nav ul
+      {
+          list-style-type: none;
+      }
+
+      nav li
+      {
+          display: inline-block;
+          margin-right: 15px;
+      }
+      */
+
+      nav a
+      {
+          /*
+          font-size: 1.3em;
+          color: #181818;
+          padding-bottom: 3px;
+          text-decoration: none;
+          */
+      }
+
+      nav a:hover
+      {
+          color: #760001;
+          border-bottom: 3px solid #760001;
+      }
+      
+      /* Cuerpo */
+
+      main article {
+        display: table-cell;
+        /*
+        width: 33%;
+        font-family: Arial, Helvetica, sans-serif;
+        */
+      }
+
+      article, aside, main
+      {
+          display: inline-block;
+          vertical-align: top;
+          text-align: justify;
+      }
+
+      article
+      {
+          width: 625px;
+          margin-right: 15px;
+      }
+
+
+      article p
+      {
+          font-size: 0.8em;
+      }
+
+      aside
+      {
+          position: relative;
+          width: 235px;
+          background-color: #706b64;
+          box-shadow: 0px 2px 5px #1c1a19;
+          border-radius: 5px;
+          padding: 10px;
+          color: white;
+          font-size: 0.9em;
+      }
+
+      #arrow
+      {
+          position: absolute;
+          top: 100px;
+          left: -12px;
+      }
+
+
+      tbody > tr > th {
+        background-color: #dde;
+        border-bottom: 1.5px solid #bbb;
+        font-weight: normal;
+      }
+      
+      /* Pie de página */
+      footer
+      {
+          /*
+          background:  url('images/top.png') no-repeat top center, url('images/line.png') repeat-x top, url('images/shadow.png') repeat-x top; 
+          */
+          padding-top: 25px;
+      }
+
+      footer p, footer ul
+      {
+          font-size: 0.8em;
+      }

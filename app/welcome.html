@@ -1,0 +1,155 @@
+<main onloadstart="onloadWelcome()">
+    <header>
+    	<h1><p>Welcome</p></h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        </ul>
+    </nav>    
+    <main >
+      <article>
+        <header>
+          
+          <details>
+            <summary>Agregar nuevo contacto</summary>
+            <section class="contact_seccion">
+              <form class="contact_form" action="" method="post" name="contact_form" id="contact_form">
+                <fieldset>
+                  <section>
+                  <p>
+                    <label for="alias">Alias</label>
+                    <input type="text" name="alias" id="alias" required>
+                  </p>
+                  <p>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                  </p>
+                  <p>
+                    <label for="appaterno">Apellido Paterno:</label>
+                    <input type="text" id="appaterno" name="appaterno" required>
+                  </p>
+                  <p>
+                    <label for="apmaterno">Apellido Materno:</label>
+                    <input type="text" id="apmaterno" name="apmaterno" required>
+                  </p>
+                  <p>
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" required>
+                  </p>
+                  <p>
+                    <label for="sexo">Sexo:</label>
+                    <input type="text" id="sexo" name="sexo" required>
+                  </p>
+                  <p>
+                    <label for="email">E-Mail:</label>
+                    <input type="text" id="email" name="email" required>
+                  </p>  
+                  <p>
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                  </p>  
+                  <p>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                  </p>       
+                  </section>
+                  <button id="submit" onclick="loadLogin();">Registro</button>
+                </fieldset>  
+                <!--
+                  <input type="button" name="" onclick="loginApp()" value="Submit">   
+                  <button type="submit">Submit</button>
+                  -->
+              </form> 
+           </section>
+          </details>
+
+        </header>
+        <section>
+          <dialog id="dialog-1">
+            <h1>Agregar nuevo contacto</h1>
+            <section class="contact_seccion">
+              <form class="contact_form" action="" method="post" name="contact_form" id="contact_form">
+                <fieldset>
+                  <section>
+                  <p>
+                    <label for="alias">Alias</label>
+                    <input type="text" name="alias" id="alias" required>
+                  </p>
+                  <p>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                  </p>
+                  <p>
+                    <label for="appaterno">Apellido Paterno:</label>
+                    <input type="text" id="appaterno" name="appaterno" required>
+                  </p>
+                  <p>
+                    <label for="apmaterno">Apellido Materno:</label>
+                    <input type="text" id="apmaterno" name="apmaterno" required>
+                  </p>
+                  <p>
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" required>
+                  </p>
+                  <p>
+                    <label for="sexo">Sexo:</label>
+                    <input type="text" id="sexo" name="sexo" required>
+                  </p>
+                  <p>
+                    <label for="email">E-Mail:</label>
+                    <input type="text" id="email" name="email" required>
+                  </p>  
+                  <p>
+                    <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                  </p>  
+                  <p>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                  </p>       
+                  </section>
+                  <button id="submit" onclick="loadLogin();">Registro</button>
+                </fieldset>  
+                <!--
+                  <input type="button" name="" onclick="loginApp()" value="Submit">   
+                  <button type="submit">Submit</button>
+                  -->
+              </form> 
+           </section>
+           
+
+            <input type="button" value="Cerrar" onclick="document.getElementById('dialog-1').removeAttribute('open')">
+          </dialog>
+
+           <p>
+            <input type="button" value="Muestra diálogo" onclick="document.getElementById('dialog-1').setAttribute('open', 'open')">
+          </p> 
+          <br>
+          <table border class="contact_table" id="contact_table" name="contact_table"> 
+            <thead>
+               <tr>
+                <th>Nombre</th>
+                <th>Alias</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>E-Mail</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+              </tr>
+            </thead>
+            <tbody class="tbody_contact_table" id="tbody_contact_table" name="tbody_contact_table">
+            </tbody>
+          </table>  
+          <br>
+        </section>
+      </article>
+
+    </main>
+    <footer>
+
+    </footer>
+
+</main>

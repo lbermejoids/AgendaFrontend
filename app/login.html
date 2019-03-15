@@ -1,0 +1,27 @@
+<main>
+    <header>
+      <h1><p>Login</p></h1>
+    </header>
+    <section class="login_seccion">
+    <form class="login_form" method="post" name="login_form" id="login_form">
+      <fieldset>
+          <section>
+          <p>
+            <label for="user">Usuario:</label>
+            <input type="text" id="user" name="user" required>
+          </p>
+          <p>
+            <label for="passwd">Password</label>
+            <input type="passwd" name="passwd" id="passwd" required>
+          </p>       
+          </section>
+          <!--
+          <input type="button" name="" onclick="loginApp()" value="Submit">   
+          <button type="submit">Submit</button>
+          -->
+          <button id="submit" onclick="loginApp();">Submit</button>
+      </fieldset>      
+    </form> 
+    <a href="#" onclick="loadUserRegistry()">Registro</a>
+    </section>
+</main>

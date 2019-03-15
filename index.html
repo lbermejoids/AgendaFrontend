@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi Agenda</title>
+    <link href="static/css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+      let agendaApp = {};
+      console.log('index page');
+      function onloadApp(){
+        console.log("index:onloadApp"); 
+        if(agendaApp.usersession === undefined ){
+          console.log("index => load login ...");
+          loadLogin();
+        }else  {
+          console.log("index => load welcome ...");
+          loadWelcome(loadListContact);
+        }
+      }
+    </script>
+  </head>
+
+  <body style="height: 500px;" onload="onloadApp()">
+    <header>
+      <h1>Agenda</h1>  
+      <hr>
+    </header>
+    <section class="container" id="container">
+    </section>
+    <footer>
+      <hr> 
+      <address>
+        Autor: Luis Bermejo
+      </address>
+    </footer>
+    
+    <script type="text/javascript" src="app/main.js"></script>
+    <script type="text/javascript" src="app/nav.js"></script> 
+    <script type="text/javascript" src="app/model.js"></script>   
+    <script type="text/javascript" src="app/view.js"></script>
+    <script type="text/javascript" src="app/controller.js"></script>
+    
+
+  </body>
+</html>
