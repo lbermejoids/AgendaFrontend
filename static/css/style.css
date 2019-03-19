@@ -150,3 +150,36 @@
       {
           font-size: 0.8em;
       }
+
+      /* Pie de página */
+      .mi-submit-button {
+        font-family: inherit;
+        font-size: 100%;
+        padding: .5em 1em;
+        color: #444;
+        color: rgba(0,0,0,.8);
+        border: 1px solid #999;
+        border: transparent;
+        background-color: #E6E6E6;
+        text-decoration: none;
+        border-radius: 2px;
+        display: inline-block;
+        zoom: 1;
+        white-space: nowrap;
+        vertical-align: middle;
+        text-align: center;
+        cursor: pointer;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        box-sizing: border-box;
+        line-height: normal;
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: rgb(28, 184, 65); /* this is a green */
+        /*background: rgb(66, 184, 221); *//* this is a light blue */
+      }
+        

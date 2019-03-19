@@ -1,65 +1,81 @@
-//
-function loadListContact(){
-	console.log("callback:loadListContact:init");
+var agendaApp = {};
+agendaApp.containerElemTarget = "container";
 
-	let controller = new agendaApp.ListContactController({
-		model: agendaApp.ListContacts,
-		view: agendaApp.ListContactView, 
-		endpoint: 'http://localhost:8080/api/contactos', 
-		contentElememt: 'tbody_contact_table'
-	});
+agendaApp.loadDataContactEventName = "onloadDataContactsEvent";
+agendaApp.refreshDataContactEventName = "refreshDataContactsEvent";
+agendaApp.deleteDataContactEventName = "deleteDataContactEvent";
 
-	console.log('callback:loadListContact:controller => ');
-	console.log(controller);
+agendaApp.loginAppEventName = "loginAppEvent";
+agendaApp.loginMessageEventName = "loginMessageEvent";
 
-	controller.model.updateModel();
+agendaApp.registroContactoAppEventName = "registroContactoAppEvent";
+agendaApp.registroContactoMessageEventName = "registroContactoMessageEvent";
+agendaApp.registroContactoCleanEventName = "registroContactoCleanEvent";
 
-	console.log("callback:loadListContact:end");	
+agendaApp.searchContactAppEventName = "searchContactAppEvent";
+agendaApp.updateSearchContactAppEventName = "updateSearchContactAppEvent";
+agendaApp.searchContactoMessageEventName = "searchContactoMessageEvent";
+
+agendaApp.registroUsuarioAppEventName = "registroUsuarioAppEvent";
+agendaApp.registroUsuarioMessageEventName = "registroUsuarioMessageEvent";
+
+function onloadApp(){
+	console.log("index:onloadApp"); 
+	if(agendaApp.usersession === undefined ){
+    	console.log("index => load login ...");
+        loadLogin();
+    }else  {
+        console.log("index => load welcome ...");
+        loadWelcome();
+    }
 }
 
-
-
-
-
-
-
-
-
-function loadLogin(){
-	console.log("callback:loadLogin:init");
-	new agendaApp.LoginController({
-		model: agendaApp.Login,
-		view: agendaApp.LoginView, 
-		endpoint: 'http://localhost:8080/api/usuarios/login', 
-		contentElememtSelector: '' 
-	});	
-	
-	console.log("callback:loadLogin:end");		
+function getElemId(id){
+	let containerElement = document.getElementById(id);
+	console.log(`main:getElemId:containerElement: => ${containerElement} with id: ${id}`);	
+	return containerElement;
 }
 
-function loadRegistroUsuario(){
-	console.log("callback:loadRegistroUsuario:init");
-	new agendaApp.RegistroUserController({
-		model: agendaApp.Usuario,
-		view: agendaApp.RegistroUserView, 
-		endpoint: 'http://localhost:8080/api/usuarios', 
-		contentElememt: '#contact_form'
-	});	
-	console.log("callback:loadRegistroUsuario:end");	
+function trimData(val){
+		if (val === undefined || val === null || val === ''){
+			return undefined;
+		}
+		return val.trim();
 }
 
+//Custom Elements... elemento global. regla - 
+customElements.define('mi-submit-btn', class extends HTMLElement{
+	constructor(){ 
+		super();
+		this.addEventListener('click', (e)=> {  //escucha de evento click
+			console.log("click en componente mi-submit-btn");				
+			//e.preventDefault();
+			this.submit(); //referencia al propio elemento en el dom (instancia de la clase)
+		});	
+	}
 
-function loadRegistroContacto(){
-	console.log("callback:loadRegistroContacto:init");
-	
-	new agendaApp.RegistroContactController({
-		model: agendaApp.Contacto,
-		view: agendaApp.RegistroContactView, 
-		endpoint: 'http://localhost:8080/api/contactos', 
-		contentElememt: '#contact_form'
-	
-	});
+	get eventFire(){
+		//console.log( 'get eventFire method');
+		if(this.hasAttribute('eventFire')){
+			return this.getAttribute('eventFire');
+		}else{
+			return undefined;
+		}
+	}
 
-	console.log("callback:loadRegistroContacto:end");	
-}
+	set eventFire(value){
+		console.log( 'set eventFire' + value );
+		if(value){
+			this.setAttribute('eventFire', '');
+		}else{
+			this.removeAttribute('eventFire');
+		}
+	}
+
+	submit(){
+		const eventName = this.eventFire;	
+		console.log( 'submit : this.eventFire : '+ eventName);	
+		this.dispatchEvent( new CustomEvent(eventName, {bubbles:true} ));
+	}
+});
 

@@ -1,4 +1,4 @@
-<main>
+
     <header>
       <h1><p>Login</p></h1>
     </header>
@@ -12,16 +12,17 @@
           </p>
           <p>
             <label for="passwd">Password</label>
-            <input type="passwd" name="passwd" id="passwd" required>
+            <input type="password" name="passwd" id="passwd" required>
           </p>       
           </section>
           <!--
           <input type="button" name="" onclick="loginApp()" value="Submit">   
           <button type="submit">Submit</button>
-          -->
           <button id="submit" onclick="loginApp();">Submit</button>
+          -->
+          <mi-submit-btn class="mi-submit-button" name="login_submit_btn" id="login_submit_btn"
+              eventFire="loginAppEvent">Submit</mi-submit-btn>
       </fieldset>      
     </form> 
     <a href="#" onclick="loadUserRegistry()">Registro</a>
     </section>
-</main>
